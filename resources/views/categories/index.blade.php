@@ -3,9 +3,15 @@
 @section('content')
 
     <h2 class="text-center">Categorias</h2>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryCreate">
+        Nueva Categoria
+    </button>
+
     <div
         class="table-responsive"
     >
+        <br>
         <table
             class="table table-primary"
         >
@@ -29,5 +35,7 @@
             </tbody>
         </table>
     </div>
+
+    @include('categories.create')
 
 @endsection

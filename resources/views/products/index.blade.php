@@ -9,7 +9,7 @@
         <table
             class="table table-primary"
         >
-            <thead>
+            <thead >
                 <tr class="text-center">
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
