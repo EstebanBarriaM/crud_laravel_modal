@@ -3,9 +3,15 @@
 @section('content')
 
     <h2 class="text-center">Productos</h2>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productCreate">
+        Nuevo Producto
+    </button>
+
     <div
         class="table-responsive"
     >
+    <br>
         <table
             class="table table-primary"
         >
@@ -25,13 +31,23 @@
                         <td scope="row">{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->stock }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->category_id }}</td>
-                        <td>Editar | Eliminar</td>
+                        <td>$ {{ $product->price }}</td>
+                        <td>{{ $product->category->name }}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productEdit{{ $product->id }}">
+                                Editar
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#productDelete{{ $product->id }}">
+                                Eliminar
+                            </button>
+                        </td>
                     </tr>
+                    @include('products.info')
                 @endforeach
             </tbody>
         </table>
     </div>
+
+    @include('products.create')
 
 @endsection

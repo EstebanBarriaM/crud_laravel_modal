@@ -29,8 +29,16 @@
                         <td scope="row">{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->description }}</td>
-                        <td>Editar | Eliminar</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#categoryEdit{{ $category->id }}">
+                                Editar
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#categoryDelete{{ $category->id }}">
+                                Eliminar
+                            </button>
+                        </td>
                     </tr>
+                    @include('categories.info')
                 @endforeach
             </tbody>
         </table>

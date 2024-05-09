@@ -29,7 +29,7 @@ class CategoryController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, String $id)
     {
         $category = Category::find($id);
         $category->name = $request->name;
